@@ -1,5 +1,12 @@
 /*
 -Steve Barry-
 main css file
+for scheduler
 */
 
+body{
+    width: 100%;
+    position: relative;
+    background-image: url("../images/bg.png");
+    background-repeat: repeat;
+}
