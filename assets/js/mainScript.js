@@ -18,12 +18,12 @@ function elapse(){
         var saved = JSON.parse(localStorage.getItem("eventList"));
         var loop = 0;
         var loopTime = 9;
-        // var nowTime = moment().format("H");
-        var nowTime = "8";
+        var nowTime = moment().format("h");
+        // var nowTime = "8";
         while(loopTime < 19){
 
             var check = saved[loop].event;
-            var name = loopTime + "text";
+            var name = "text" + loopTime;
             var match = document.getElementById(name).value;
             if(check == match){
                 document.getElementById(name).style.boxShadow = "none";
@@ -32,7 +32,7 @@ function elapse(){
 
             }
             var row = "block"+loopTime;
-            var tArea = loopTime+"text";
+            var tArea = "text"+loopTime;
             if(nowTime > loopTime){
                 document.getElementById(row).style.backgroundColor = "lightgrey";
                 document.getElementById(row).style.color = "darkgrey";
@@ -58,7 +58,7 @@ function load(){
     while(loopTime < 19){
 
         var val = saved[loop].event;
-        var name = loopTime + "text";
+        var name = "text"+loopTime ;
 
         document.getElementById(name).value = val;
 
@@ -140,81 +140,81 @@ function showGif(el, curr){
         el.style.backgroundImage = "";
     }, 3500);
 }
-function set(num){
-    var ele = document.getElementById("btn"+num);
-    var toAdd = document.getElementById(num+"text").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    var arrayPos = parseInt(num -9);
-    current[arrayPos].event = toAdd;
-    showGif(ele,current);
-}
+// function set(num){
+//     var ele = document.getElementById("btn"+num);
+//     var toAdd = document.getElementById(num+"text").value;
+//     var current = JSON.parse(localStorage.getItem("eventList"));
+//     var arrayPos = parseInt(num -9);
+//     current[arrayPos].event = toAdd;
+//     showGif(ele,current);
+// }
 
 function set9(){
     var ele = document.getElementById("btn9");
-    var toAdd = document.getElementById("9text").value;
+    var toAdd = document.getElementById("text9").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[0].event = toAdd;
     showGif(ele,current);
 }
 function set10(){
     var ele = document.getElementById("btn10");
-    var toAdd = document.getElementById("10text").value;
+    var toAdd = document.getElementById("text10").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[1].event = toAdd;
     showGif(ele,current);
 }
 function set11(){
     var ele = document.getElementById("btn11");
-    var toAdd = document.getElementById("11text").value;
+    var toAdd = document.getElementById("text11").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[2].event = toAdd;
     showGif(ele,current);
 }
 function set12(){
     var ele = document.getElementById("btn12");
-    var toAdd = document.getElementById("12text").value;
+    var toAdd = document.getElementById("text12").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[3].event = toAdd;
     showGif(ele,current);
 }
 function set13(){
     var ele = document.getElementById("btn13");
-    var toAdd = document.getElementById("13text").value;
+    var toAdd = document.getElementById("text13").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[4].event = toAdd;
     showGif(ele,current);
 }
 function set14(){
     var ele = document.getElementById("btn14");
-    var toAdd = document.getElementById("14text").value;
+    var toAdd = document.getElementById("text14").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[5].event = toAdd;
     showGif(ele,current);
 }
 function set15(){
     var ele = document.getElementById("btn15");
-    var toAdd = document.getElementById("15text").value;
+    var toAdd = document.getElementById("text15").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[6].event = toAdd;
     showGif(ele,current);
 }
 function set16(){
     var ele = document.getElementById("btn16");
-    var toAdd = document.getElementById("16text").value;
+    var toAdd = document.getElementById("text16").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[7].event = toAdd;
     showGif(ele,current);
 }
 function set17(){
     var ele = document.getElementById("btn17");
-    var toAdd = document.getElementById("17text").value;
+    var toAdd = document.getElementById("text17").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[8].event = toAdd;
     showGif(ele,current);
 }
 function set18(){
     var ele = document.getElementById("btn18");
-    var toAdd = document.getElementById("18text").value;
+    var toAdd = document.getElementById("text18").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[9].event = toAdd;
     showGif(ele,current);
