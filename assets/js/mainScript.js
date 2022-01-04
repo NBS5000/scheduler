@@ -19,7 +19,7 @@ function elapse(){
         var loop = 0;
         var loopTime = 9;
         // var nowTime = moment().format("H");
-        var nowTime = "11";
+        var nowTime = "8";
         while(loopTime < 19){
 
             var check = saved[loop].event;
@@ -129,115 +129,93 @@ document.getElementById("btn16").addEventListener("click",set16);
 document.getElementById("btn17").addEventListener("click",set17);
 document.getElementById("btn18").addEventListener("click",set18);
 
-var imageLoc = "url('../assets/images/upload.gif')";
+var imageLoc;
+function showGif(el, curr){
+    localStorage.setItem("eventList",JSON.stringify(curr));
+    /* addition of random taken from stackoverflow: 
+    https://stackoverflow.com/questions/3191922/restart-an-animated-gif-from-javascript-without-reloading-the-image */ 
+    imageLoc = "url('../assets/images/upload.gif?a="+Math.random()+"')";
+    el.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        el.style.backgroundImage = "";
+    }, 3500);
+}
+function set(num){
+    var ele = document.getElementById("btn"+num);
+    var toAdd = document.getElementById(num+"text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    var arrayPos = parseInt(num -9);
+    current[arrayPos].event = toAdd;
+    showGif(ele,current);
+}
 
 function set9(){
     var ele = document.getElementById("btn9");
     var toAdd = document.getElementById("9text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[0].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set10(){
     var ele = document.getElementById("btn10");
     var toAdd = document.getElementById("10text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[1].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set11(){
     var ele = document.getElementById("btn11");
     var toAdd = document.getElementById("11text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[2].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set12(){
     var ele = document.getElementById("btn12");
     var toAdd = document.getElementById("12text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[3].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set13(){
     var ele = document.getElementById("btn13");
     var toAdd = document.getElementById("13text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[4].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set14(){
     var ele = document.getElementById("btn14");
     var toAdd = document.getElementById("14text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[5].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set15(){
     var ele = document.getElementById("btn15");
     var toAdd = document.getElementById("15text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[6].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set16(){
     var ele = document.getElementById("btn16");
     var toAdd = document.getElementById("16text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[7].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set17(){
     var ele = document.getElementById("btn17");
     var toAdd = document.getElementById("17text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[8].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
 function set18(){
     var ele = document.getElementById("btn18");
     var toAdd = document.getElementById("18text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[9].event = toAdd;
-    localStorage.setItem("eventList",JSON.stringify(current));
-    ele.style.backgroundImage = imageLoc;
-    setTimeout(function(){
-        ele.style.backgroundImage = "";
-    }, 3500);
+    showGif(ele,current);
 }
