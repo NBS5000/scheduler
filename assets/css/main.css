@@ -40,7 +40,7 @@ td{
     width: 100px;
 }
 .time-block{
-    border-bottom: 2px solid darkgoldenrod;
+    border-bottom: 1px solid darkgoldenrod;
 }
 .updateVal{
     background-color: white;

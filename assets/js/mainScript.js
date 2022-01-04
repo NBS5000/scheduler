@@ -129,49 +129,115 @@ document.getElementById("btn16").addEventListener("click",set16);
 document.getElementById("btn17").addEventListener("click",set17);
 document.getElementById("btn18").addEventListener("click",set18);
 
-var imageLoc = "url('../images/upload.gif')";
+var imageLoc = "url('../assets/images/upload.gif')";
 
 function set9(){
+    var ele = document.getElementById("btn9");
     var toAdd = document.getElementById("9text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[0].event = toAdd;
     localStorage.setItem("eventList",JSON.stringify(current));
-    document.getElementById("btn9").style.backgroundImage = "url('../assets/images/upload.gif')";
+    ele.style.backgroundImage = imageLoc;
     setTimeout(function(){
-        document.getElementById("btn9").style.backgroundImage = "";
+        ele.style.backgroundImage = "";
     }, 3500);
 }
 function set10(){
+    var ele = document.getElementById("btn10");
     var toAdd = document.getElementById("10text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     current[1].event = toAdd;
     localStorage.setItem("eventList",JSON.stringify(current));
-    document.getElementById("btn10").style.backgroundImage = "url('../assets/images/upload.gif')";
+    ele.style.backgroundImage = imageLoc;
     setTimeout(function(){
-        document.getElementById("btn10").style.backgroundImage = "";
+        ele.style.backgroundImage = "";
     }, 3500);
 }
 function set11(){
-    button3.innerHTML = "test";
+    var ele = document.getElementById("btn11");
+    var toAdd = document.getElementById("11text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[2].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
 function set12(){
-    button4.innerHTML = "test";
+    var ele = document.getElementById("btn12");
+    var toAdd = document.getElementById("12text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[3].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
 function set13(){
-    button4.innerHTML = "test";
+    var ele = document.getElementById("btn13");
+    var toAdd = document.getElementById("13text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[4].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
 function set14(){
-    button4.innerHTML = "test";
+    var ele = document.getElementById("btn14");
+    var toAdd = document.getElementById("14text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[5].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
 function set15(){
-    button4.innerHTML = "test";
+    var ele = document.getElementById("btn15");
+    var toAdd = document.getElementById("15text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[6].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
 function set16(){
-    button4.innerHTML = "test";
+    var ele = document.getElementById("btn16");
+    var toAdd = document.getElementById("16text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[7].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
 function set17(){
-    button4.innerHTML = "test";
+    var ele = document.getElementById("btn17");
+    var toAdd = document.getElementById("17text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[8].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
 function set18(){
-    button4.innerHTML = "test";
+    var ele = document.getElementById("btn18");
+    var toAdd = document.getElementById("18text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    current[9].event = toAdd;
+    localStorage.setItem("eventList",JSON.stringify(current));
+    ele.style.backgroundImage = imageLoc;
+    setTimeout(function(){
+        ele.style.backgroundImage = "";
+    }, 3500);
 }
