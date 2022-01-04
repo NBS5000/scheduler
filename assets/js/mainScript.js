@@ -18,30 +18,30 @@ function elapse(){
         var saved = JSON.parse(localStorage.getItem("eventList"));
         var loop = 0;
         var loopTime = 9;
-        var nowTime = moment().format("H");
-        // var nowTime = "14";
-        // console.log(nowTime);
+        // var nowTime = moment().format("H");
+        var nowTime = "11";
         while(loopTime < 19){
 
             var check = saved[loop].event;
             var name = loopTime + "text";
             var match = document.getElementById(name).value;
-            // console.log(name);
             if(check == match){
-                // console.log(check + " - " + name + " - match");
                 document.getElementById(name).style.boxShadow = "none";
             }else{
-                // console.log(check + " - " + name + " - no match");
                 document.getElementById(name).style.boxShadow = "0px 0px 15px Red";
 
             }
             var row = "block"+loopTime;
+            var tArea = loopTime+"text";
             if(nowTime > loopTime){
-                document.getElementById(row).style.backgroundColor = "green";
+                document.getElementById(row).style.backgroundColor = "lightgrey";
+                document.getElementById(row).style.color = "darkgrey";
+                document.getElementById(tArea).disabled = true;
             }else if(nowTime == loopTime){
-                document.getElementById(row).style.backgroundColor = "purple";
+                document.getElementById(row).style.backgroundColor = "olive";
+                document.getElementById(row).style.color = "white";
             }else{
-                document.getElementById(row).style.backgroundColor = "white";
+                document.getElementById(row).style.backgroundColor = "oldlace";
             }
 
             loop++;
