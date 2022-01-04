@@ -18,7 +18,9 @@ function elapse(){
         var saved = JSON.parse(localStorage.getItem("eventList"));
         var loop = 0;
         var loopTime = 9;
-
+        var nowTime = moment().format("H");
+        // var nowTime = "14";
+        // console.log(nowTime);
         while(loopTime < 19){
 
             var check = saved[loop].event;
@@ -26,11 +28,19 @@ function elapse(){
             var match = document.getElementById(name).value;
             // console.log(name);
             if(check == match){
-                console.log(check + " - " + name + " - match");
-                document.getElementById(name).style.borderColor = "Black";
+                // console.log(check + " - " + name + " - match");
+                document.getElementById(name).style.border = "1px solid Black";
             }else{
-                console.log(check + " - " + name + " - no match");
-                document.getElementById(name).style.borderColor = "Red";
+                // console.log(check + " - " + name + " - no match");
+                document.getElementById(name).style.border = "5px solid Red";
+            }
+            var row = "block"+loopTime;
+            if(nowTime > loopTime){
+                document.getElementById(row).style.backgroundColor = "green";
+            }else if(nowTime == loopTime){
+                document.getElementById(row).style.backgroundColor = "purple";
+            }else{
+                document.getElementById(row).style.backgroundColor = "white";
             }
 
             loop++;
@@ -107,34 +117,51 @@ function checkEvents(){
     }
 }
 
-var button1 = document.getElementById("btn1");
-var button2 = document.getElementById("btn2");
-var button3 = document.getElementById("btn3");
-var button4 = document.getElementById("btn4");
+var button1 = document.getElementById("btn9").addEventListener("click",set9);
+var button2 = document.getElementById("btn10").addEventListener("click",set10);
+var button3 = document.getElementById("btn11").addEventListener("click",set11);
+var button4 = document.getElementById("btn12").addEventListener("click",set12);
+var button1 = document.getElementById("btn13").addEventListener("click",set13);
+var button2 = document.getElementById("btn14").addEventListener("click",set14);
+var button3 = document.getElementById("btn15").addEventListener("click",set15);
+var button4 = document.getElementById("btn16").addEventListener("click",set16);
+var button3 = document.getElementById("btn17").addEventListener("click",set17);
+var button4 = document.getElementById("btn18").addEventListener("click",set18);
+// button1.addEventListener("click",test1);
+// button2.addEventListener("click",test2);
+// button3.addEventListener("click",test3);
+// button4.addEventListener("click",test4);
 
-button1.addEventListener("click",test1);
-button2.addEventListener("click",test2);
-button3.addEventListener("click",test3);
-button4.addEventListener("click",test4);
-
-function test1(){
-    button1.innerHTML = "test";
-
+function set9(){
     var toAdd = document.getElementById("9text").value;
     var current = JSON.parse(localStorage.getItem("eventList"));
-    console.log(toAdd);
-    console.log(current);
     current[0].event = toAdd;
-    console.log(current);
     localStorage.setItem("eventList",JSON.stringify(current));
-
 }
-function test2(){
+function set10(){
     button2.innerHTML = "test";
 }
-function test3(){
+function set11(){
     button3.innerHTML = "test";
 }
-function test4(){
+function set12(){
+    button4.innerHTML = "test";
+}
+function set13(){
+    button4.innerHTML = "test";
+}
+function set14(){
+    button4.innerHTML = "test";
+}
+function set15(){
+    button4.innerHTML = "test";
+}
+function set16(){
+    button4.innerHTML = "test";
+}
+function set17(){
+    button4.innerHTML = "test";
+}
+function set18(){
     button4.innerHTML = "test";
 }
