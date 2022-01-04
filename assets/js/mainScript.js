@@ -7,6 +7,7 @@ javascript file
 
 function open(){
     checkEvents();
+    load();
     elapse();
 }
 
@@ -14,20 +15,43 @@ function elapse(){
     setInterval(timeInterval, 1000);
     function timeInterval(){
         document.getElementById("currentDay").innerHTML = moment().format("dddd, Do MMMM YYYY, h:mm:ss a");
-        var saved = localStorage.getItem("eventList");
+        var saved = JSON.parse(localStorage.getItem("eventList"));
         var loop = 0;
         var loopTime = 9;
 
-        while(loopTime < 13){
+        while(loopTime < 19){
 
             var check = saved[loop].event;
             var name = loopTime + "text";
-            console.log(name);
-
+            // console.log(name);
+            if(check == document.getElementById(name).value){
+                console.log(check + " - " + name + " - match");
+                document.getElementById(name).style.borderColor = "Black";
+            }else{
+                console.log(check + " - " + name + " - no match");
+                document.getElementById(name).style.borderColor = "Red";
+            }
 
             loop++;
             loopTime++;
         }
+    }
+}
+
+function load(){
+    var saved = JSON.parse(localStorage.getItem("eventList"));
+    var loop = 0;
+    var loopTime = 9;
+
+    while(loopTime < 19){
+
+        var val = saved[loop].event;
+        var name = loopTime + "text";
+
+        document.getElementById(name).value = val;
+
+        loop++;
+        loopTime++;
     }
 }
 
@@ -37,7 +61,7 @@ function checkEvents(){
     if(!eventList){
         var block9={
             time:"9am",
-            event:""
+            event:"test"
         }
         var block10={
             time:"10am",
@@ -75,9 +99,10 @@ function checkEvents(){
             time:"6pm",
             event:""
         }
+        var list = [];
+        list.push(block9,block10,block11,block12,block13,block14,block15,block16,block17,block18);
 
-
-        localStorage.setItem("eventList","");
+        localStorage.setItem("eventList",JSON.stringify(list));
     }
 }
 
