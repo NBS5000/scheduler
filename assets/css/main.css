@@ -7,8 +7,8 @@ for scheduler
 body{
     width: 100%;
     position: relative;
-    background-image: url("../images/bg.png");
-    background-repeat: repeat;
+    /* background-image: url("../images/bg.png");
+    background-repeat: repeat; */
 }
 
 .jumbo_h1{
@@ -16,4 +16,11 @@ body{
 }
 .lead{
     font-size: 25%;
+}
+table{
+    border: black solid 1px;
+}
+.txt_event{
+    font-size: 20%;
+    resize: none;
 }

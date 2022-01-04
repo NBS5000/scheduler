@@ -20,13 +20,13 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
     <!-- above section from homework folder -->
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css"/>
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
-<body onload="elapse()">
+<body onload="open()">
 
     <header class="jumbotron">
         <h1 class="jumbo_h1">Work Day Scheduler</h1>
@@ -35,9 +35,34 @@
     </header>
     <div class="container">
     <!-- Timeblocks go here -->
+    <table>
+        <tr>
+            <th>Hour</th>
+            <th>Event</th>
+            <th>Add</th>
+        </tr>
+        <tr class="time-block">
+            <td class="hour">9am</td>
+            <td><textarea name="9text" id="9text" cols="20" rows="3" class="txt_event"></textarea></td>
+            <td id="btn1" value="9">+</td>
+        </tr>
+        <tr class="time-block">
+            <td class="hour">10am</td>
+            <td><textarea name="10text" id="10text" cols="20" rows="3" class="txt_event"></textarea></td>
+            <td id="btn2" value="10">+</td>
+        </tr>
+        <tr class="time-block">
+            <td class="hour">11am</td>
+            <td><textarea name="11text" id="11text" cols="20" rows="3" class="txt_event"></textarea></td>
+            <td id="btn3" value="11">+</td>
+        </tr>
+        <tr class="time-block">
+            <td class="hour">12am</td>
+            <td><textarea name="12text" id="12text" cols="20" rows="3" class="txt_event"></textarea></td>
+            <td id="btn4" value="12">+</td>
+        </tr>
+    </table>
 
-
-    <h2 id="test">Test</h2>
 
     </div>
 
