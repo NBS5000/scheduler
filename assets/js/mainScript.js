@@ -23,8 +23,9 @@ function elapse(){
 
             var check = saved[loop].event;
             var name = loopTime + "text";
+            var match = document.getElementById(name).value;
             // console.log(name);
-            if(check == document.getElementById(name).value){
+            if(check == match){
                 console.log(check + " - " + name + " - match");
                 document.getElementById(name).style.borderColor = "Black";
             }else{
@@ -73,7 +74,7 @@ function checkEvents(){
         }
         var block12={
             time:"12pm",
-            event:""
+            event:"blue"
         }
         var block13={
             time:"1pm",
@@ -118,6 +119,15 @@ button4.addEventListener("click",test4);
 
 function test1(){
     button1.innerHTML = "test";
+
+    var toAdd = document.getElementById("9text").value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    console.log(toAdd);
+    console.log(current);
+    current[0].event = toAdd;
+    console.log(current);
+    localStorage.setItem("eventList",JSON.stringify(current));
+
 }
 function test2(){
     button2.innerHTML = "test";
