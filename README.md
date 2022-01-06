@@ -18,9 +18,7 @@ The provided user story was:
 
 **TASK**
 
-Provide a solution that asks a number of questions, against a timer, and then record the score and compare to other scores.
-
-*Having checked with the teachers, it was confirmed that the topic of questions does not necessarily need to be on Javascript*
+Provide a solution that allows a user to note events against a specific hour block, and that data persists on page exit/load. the page should also highlist past, present, and future time blocks, as well as displaying the current date/time.
 
 **ACTION**
 
@@ -33,7 +31,7 @@ Writing of a solution to resolve the situation, including:
   * *Error free loading*
   * *Favicon designed and added*
   * *Thorough comments*
-  * *Intuitive design with messages to users*
+  * *Intuitive design with feedback for users*
 * Javascript
   * *Error free performance*
   * *Multiple functions to separate aspects of code*
@@ -42,26 +40,28 @@ Writing of a solution to resolve the situation, including:
   * *Numerous commits to track changes in code*
   * *Code added to public repository and Github Pages for public viewing*
 * Functionality
-  * *Feedback to the user as to how well they've done, with a Star Wars twist*
-  * *Hall of Fame to track the best scores, which can be cleared if desired*
+  * *Feedback to the user to show if any unsaved changes*
+  * *Past events disabled to prevent historical data being changed*
+  * *Visual feedback to the user to show saving*
+  * *The timeblocks update past/present/future without user input*
 
 **RESULT**
 
 The end code is stored on Github, and publicly available and viewable. This result meets all requirements of the User Story and acceptance criteria:
 
-* GIVEN I am using a daily planner to create a schedule
-* WHEN I open the planner
-* THEN the current day is displayed at the top of the calendar
-* WHEN I scroll down
-* THEN I am presented with timeblocks for standard business hours
-* WHEN I view the timeblocks for that day
-* THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-* WHEN I click into a timeblock
-* THEN I can enter an event
-* WHEN I click the save button for that timeblock
-* THEN the text for that event is saved in local storage
-* WHEN I refresh the page
-* THEN the saved events persist
+* ~~GIVEN I am using a daily planner to create a schedule~~
+* ~~WHEN I open the planner~~
+* ~~THEN the current day is displayed at the top of the calendar~~
+* ~~WHEN I scroll down~~
+* ~~THEN I am presented with timeblocks for standard business hours~~
+* ~~WHEN I view the timeblocks for that day~~
+* ~~THEN each timeblock is color coded to indicate whether it is in the past, present, or future~~
+* ~~WHEN I click into a timeblock~~
+* ~~THEN I can enter an event~~
+* ~~WHEN I click the save button for that timeblock~~
+* ~~THEN the text for that event is saved in local storage~~
+* ~~WHEN I refresh the page~~
+* ~~THEN the saved events persist~~
 
 ## <span style="color:green"> The Outcome</span>
 
