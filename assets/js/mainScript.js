@@ -30,11 +30,13 @@ function elapse(){
 
             var check = saved[loop].event;
             var name = "text" + loopTime;
+            var btnUp = "btn"+loopTime;
             var match = document.getElementById(name).value;
             if(check == match){
                 document.getElementById(name).style.boxShadow = "none";
             }else{
                 document.getElementById(name).style.boxShadow = "0px 0px 15px Red";
+                document.getElementById(btnUp).style.visibility = "visible";
 
             }
             var row = "block"+loopTime;
@@ -151,6 +153,7 @@ function showGif(el, curr){
     el.style.backgroundImage = imageLoc;
     setTimeout(function(){
         el.style.backgroundImage = "";
+        el.style.visibility = "hidden";
     }, 3500);
 }
 

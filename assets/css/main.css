@@ -25,26 +25,20 @@ body{
     border-bottom: 2px solid black;
     padding: 2%;
 }
-.jumbo_h1{
+.jumbo_h1, .hour{
     font-size: 150%;
-    text-align: center;
 }
-.lead{
+.lead, th, .hour, .jumbo_h1{
     text-align: center;
 }
 table{
     border: none;
     width: 100%;
 }
-th{
-    text-align: center;
-}
 td{
     vertical-align: middle;
 }
 .hour{
-    font-size: 150%;
-    text-align: center;
     width: 100px;
 }
 .updateVal{
@@ -56,6 +50,7 @@ td{
     text-align: center;
     width: 70px;
     color: black;
+    visibility: hidden;
 }
 .txt_event{
     font-size: 100%;
@@ -65,7 +60,4 @@ td{
     padding: 10px 15px;
     border-radius: 30px;
     margin-top: 6px;
-}
-.txt_event:focus .time-block{
-    background-color: burlywood;
 }
