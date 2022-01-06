@@ -6,12 +6,17 @@ javascript file
 */
 
 function open(){
+    /* when page first loads, run checkEvents to see if there is an object in localStorage for this page,
+    after that, load the events, then set the elapse to update time and display as needed*/
     checkEvents();
     load();
     elapse();
 }
 
 function elapse(){
+    /* code runs every second, updates time and checks if values of events are different than what is saved
+    change display of box to highlight if there is a difference, adjust colours and accessibility depending 
+    on time: olive for current hour, grey and disabled for past, 'oldlace' for future*/
     setInterval(timeInterval, 1000);
     function timeInterval(){
         document.getElementById("currentDay").innerHTML = moment().format("dddd, Do MMMM YYYY, h:mm:ss a");
@@ -19,6 +24,7 @@ function elapse(){
         var loop = 0;
         var loopTime = 9;
         var nowTime = moment().format("H");
+        /* setting fixed time for testing */
         // var nowTime = "8";
         while(loopTime < 19){
 
@@ -51,6 +57,7 @@ function elapse(){
 }
 
 function load(){
+    /* when page is loaded, set events on page */
     var saved = JSON.parse(localStorage.getItem("eventList"));
     var loop = 0;
     var loopTime = 9;
@@ -69,7 +76,7 @@ function load(){
 
 function checkEvents(){
     var eventList = localStorage.getItem("eventList");
-    /* if eventList is empty, set variable */
+    /* if eventList is empty, set event items and times */
     if(!eventList){
         var block9={
             time:"9am",
@@ -117,20 +124,21 @@ function checkEvents(){
         localStorage.setItem("eventList",JSON.stringify(list));
     }
 }
+/* bind added using info taken from stackoverflow:
+https://stackoverflow.com/questions/256754/how-to-pass-arguments-to-addeventlistener-listener-function*/
+document.getElementById("btn9").addEventListener("click",set.bind(null,9));
+document.getElementById("btn10").addEventListener("click",set.bind(null,10));
+document.getElementById("btn11").addEventListener("click",set.bind(null,11));
+document.getElementById("btn12").addEventListener("click",set.bind(null,12));
+document.getElementById("btn13").addEventListener("click",set.bind(null,13));
+document.getElementById("btn14").addEventListener("click",set.bind(null,14));
+document.getElementById("btn15").addEventListener("click",set.bind(null,15));
+document.getElementById("btn16").addEventListener("click",set.bind(null,16));
+document.getElementById("btn17").addEventListener("click",set.bind(null,17));
+document.getElementById("btn18").addEventListener("click",set.bind(null,18));
 
-document.getElementById("btn9").addEventListener("click",set9);
-document.getElementById("btn10").addEventListener("click",set10);
-document.getElementById("btn11").addEventListener("click",set11);
-document.getElementById("btn12").addEventListener("click",set12);
-document.getElementById("btn13").addEventListener("click",set13);
-document.getElementById("btn14").addEventListener("click",set14);
-document.getElementById("btn15").addEventListener("click",set15);
-document.getElementById("btn16").addEventListener("click",set16);
-document.getElementById("btn17").addEventListener("click",set17);
-document.getElementById("btn18").addEventListener("click",set18);
 
-
-var imageLoc;
+var imageLoc, num;
 function showGif(el, curr){
     localStorage.setItem("eventList",JSON.stringify(curr));
     /* addition of random taken from stackoverflow: 
@@ -146,95 +154,12 @@ function showGif(el, curr){
     }, 3500);
 }
 
+/* functions for setting events reduced from 10 to 1 */
 function set(num){
-    // debugger;
-    // var num = document.getElementsByClassName("updateVal").outerHTML.value;
-
     var ele = document.getElementById("btn"+num);
     var toAdd = document.getElementById("text"+num).value;
     var current = JSON.parse(localStorage.getItem("eventList"));
     var arrayPos = parseInt(num -9);
     current[arrayPos].event = toAdd;
     showGif(ele,current);
-}
-
-function set9(){
-    set(9);
-    // var ele = document.getElementById("btn9");
-    // var toAdd = document.getElementById("text9").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[0].event = toAdd;
-    // showGif(ele,current);
-}
-function set10(){
-    set(10);
-    // var ele = document.getElementById("btn10");
-    // var toAdd = document.getElementById("text10").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[1].event = toAdd;
-    // showGif(ele,current);
-}
-function set11(){
-    set(11);
-    // var ele = document.getElementById("btn11");
-    // var toAdd = document.getElementById("text11").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[2].event = toAdd;
-    // showGif(ele,current);
-}
-function set12(){
-    set(12);
-    // var ele = document.getElementById("btn12");
-    // var toAdd = document.getElementById("text12").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[3].event = toAdd;
-    // showGif(ele,current);
-}
-function set13(){
-    set(13);
-    // var ele = document.getElementById("btn13");
-    // var toAdd = document.getElementById("text13").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[4].event = toAdd;
-    // showGif(ele,current);
-}
-function set14(){
-    set(14);
-    // var ele = document.getElementById("btn14");
-    // var toAdd = document.getElementById("text14").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[5].event = toAdd;
-    // showGif(ele,current);
-}
-function set15(){
-    set(15);
-    // var ele = document.getElementById("btn15");
-    // var toAdd = document.getElementById("text15").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[6].event = toAdd;
-    // showGif(ele,current);
-}
-function set16(){
-    set(16);
-    // var ele = document.getElementById("btn16");
-    // var toAdd = document.getElementById("text16").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[7].event = toAdd;
-    // showGif(ele,current);
-}
-function set17(){
-    set(17);
-    // var ele = document.getElementById("btn17");
-    // var toAdd = document.getElementById("text17").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[8].event = toAdd;
-    // showGif(ele,current);
-}
-function set18(){
-    set(18);
-    // var ele = document.getElementById("btn18");
-    // var toAdd = document.getElementById("text18").value;
-    // var current = JSON.parse(localStorage.getItem("eventList"));
-    // current[9].event = toAdd;
-    // showGif(ele,current);
 }
