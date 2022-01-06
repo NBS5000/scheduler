@@ -7,8 +7,9 @@ for scheduler
 body{
     width: 100%;
     position: relative;
-    /* background-image: url("../images/bg.png");
-    background-repeat: repeat; */
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../images/bg.png");
+    background-repeat: repeat;
 }
 .container{
     width: 70%;
@@ -16,7 +17,14 @@ body{
     padding: 0;
     margin-bottom: 30px;
 }
-
+.jumbotron {
+    text-align: center;
+    background-color: lightgray;
+    color: black;
+    border-radius: 0;
+    border-bottom: 2px solid black;
+    padding: 2%;
+}
 .jumbo_h1{
     font-size: 150%;
     text-align: center;
@@ -32,7 +40,6 @@ th{
     text-align: center;
 }
 td{
-    /* padding: 15px 5px; */
     vertical-align: middle;
 }
 .hour{
@@ -51,6 +58,7 @@ td{
     cursor: pointer;
     text-align: center;
     width: 70px;
+    color: black;
 }
 .txt_event{
     font-size: 100%;
