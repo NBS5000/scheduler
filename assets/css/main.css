@@ -47,9 +47,6 @@ td{
     text-align: center;
     width: 100px;
 }
-.time-block{
-    /* border-bottom: 1px solid darkgoldenrod; */
-}
 .updateVal{
     background-color: white;
     background-image: url("../images/uploadStatic.png"); 
