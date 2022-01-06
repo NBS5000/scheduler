@@ -23,9 +23,9 @@ function elapse(){
         var saved = JSON.parse(localStorage.getItem("eventList"));
         var loop = 0;
         var loopTime = 9;
-        var nowTime = moment().format("H");
+        // var nowTime = moment().format("H");
         /* setting fixed time for testing */
-        // var nowTime = "8";
+        var nowTime = "8";
         while(loopTime < 19){
 
             var check = saved[loop].event;
@@ -126,19 +126,15 @@ function checkEvents(){
         localStorage.setItem("eventList",JSON.stringify(list));
     }
 }
-/* bind added using info taken from stackoverflow:
-https://stackoverflow.com/questions/256754/how-to-pass-arguments-to-addeventlistener-listener-function*/
-document.getElementById("btn9").addEventListener("click",set.bind(null,9));
-document.getElementById("btn10").addEventListener("click",set.bind(null,10));
-document.getElementById("btn11").addEventListener("click",set.bind(null,11));
-document.getElementById("btn12").addEventListener("click",set.bind(null,12));
-document.getElementById("btn13").addEventListener("click",set.bind(null,13));
-document.getElementById("btn14").addEventListener("click",set.bind(null,14));
-document.getElementById("btn15").addEventListener("click",set.bind(null,15));
-document.getElementById("btn16").addEventListener("click",set.bind(null,16));
-document.getElementById("btn17").addEventListener("click",set.bind(null,17));
-document.getElementById("btn18").addEventListener("click",set.bind(null,18));
-
+/* below taken from wk4 class activity 20 - web apis, tuesday*/
+var table = document.querySelector("table");
+table.addEventListener("click",function(check){
+    var element = check.target;
+    if(element.matches(".updateVal")){
+        var button = element.getAttribute("value");
+        set(button);
+    }
+});
 
 var imageLoc, num;
 function showGif(el, curr){
@@ -157,7 +153,7 @@ function showGif(el, curr){
     }, 3500);
 }
 
-/* functions for setting events reduced from 10 to 1 */
+/* functions for setting events */
 function set(num){
     var ele = document.getElementById("btn"+num);
     var toAdd = document.getElementById("text"+num).value;
