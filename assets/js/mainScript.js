@@ -129,94 +129,112 @@ document.getElementById("btn16").addEventListener("click",set16);
 document.getElementById("btn17").addEventListener("click",set17);
 document.getElementById("btn18").addEventListener("click",set18);
 
+
 var imageLoc;
 function showGif(el, curr){
     localStorage.setItem("eventList",JSON.stringify(curr));
     /* addition of random taken from stackoverflow: 
     https://stackoverflow.com/questions/3191922/restart-an-animated-gif-from-javascript-without-reloading-the-image */ 
-    imageLoc = "url('../scheduler/assets/images/upload.gif?a="+Math.random()+"?raw=true')";
-    // imageLoc = "url('../scheduler/assets/images/upload.gif')";
+    if(location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+        imageLoc = "url('../assets/images/upload.gif?a="+Math.random()+"?raw=true')";
+    }else{
+        imageLoc = "url('../scheduler/assets/images/upload.gif?a="+Math.random()+"?raw=true')";
+    }
     el.style.backgroundImage = imageLoc;
     setTimeout(function(){
         el.style.backgroundImage = "";
     }, 3500);
 }
-// function set(num){
-//     var ele = document.getElementById("btn"+num);
-//     var toAdd = document.getElementById(num+"text").value;
-//     var current = JSON.parse(localStorage.getItem("eventList"));
-//     var arrayPos = parseInt(num -9);
-//     current[arrayPos].event = toAdd;
-//     showGif(ele,current);
-// }
+
+function set(num){
+    // debugger;
+    // var num = document.getElementsByClassName("updateVal").outerHTML.value;
+
+    var ele = document.getElementById("btn"+num);
+    var toAdd = document.getElementById("text"+num).value;
+    var current = JSON.parse(localStorage.getItem("eventList"));
+    var arrayPos = parseInt(num -9);
+    current[arrayPos].event = toAdd;
+    showGif(ele,current);
+}
 
 function set9(){
-    var ele = document.getElementById("btn9");
-    var toAdd = document.getElementById("text9").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[0].event = toAdd;
-    showGif(ele,current);
+    set(9);
+    // var ele = document.getElementById("btn9");
+    // var toAdd = document.getElementById("text9").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[0].event = toAdd;
+    // showGif(ele,current);
 }
 function set10(){
-    var ele = document.getElementById("btn10");
-    var toAdd = document.getElementById("text10").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[1].event = toAdd;
-    showGif(ele,current);
+    set(10);
+    // var ele = document.getElementById("btn10");
+    // var toAdd = document.getElementById("text10").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[1].event = toAdd;
+    // showGif(ele,current);
 }
 function set11(){
-    var ele = document.getElementById("btn11");
-    var toAdd = document.getElementById("text11").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[2].event = toAdd;
-    showGif(ele,current);
+    set(11);
+    // var ele = document.getElementById("btn11");
+    // var toAdd = document.getElementById("text11").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[2].event = toAdd;
+    // showGif(ele,current);
 }
 function set12(){
-    var ele = document.getElementById("btn12");
-    var toAdd = document.getElementById("text12").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[3].event = toAdd;
-    showGif(ele,current);
+    set(12);
+    // var ele = document.getElementById("btn12");
+    // var toAdd = document.getElementById("text12").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[3].event = toAdd;
+    // showGif(ele,current);
 }
 function set13(){
-    var ele = document.getElementById("btn13");
-    var toAdd = document.getElementById("text13").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[4].event = toAdd;
-    showGif(ele,current);
+    set(13);
+    // var ele = document.getElementById("btn13");
+    // var toAdd = document.getElementById("text13").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[4].event = toAdd;
+    // showGif(ele,current);
 }
 function set14(){
-    var ele = document.getElementById("btn14");
-    var toAdd = document.getElementById("text14").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[5].event = toAdd;
-    showGif(ele,current);
+    set(14);
+    // var ele = document.getElementById("btn14");
+    // var toAdd = document.getElementById("text14").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[5].event = toAdd;
+    // showGif(ele,current);
 }
 function set15(){
-    var ele = document.getElementById("btn15");
-    var toAdd = document.getElementById("text15").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[6].event = toAdd;
-    showGif(ele,current);
+    set(15);
+    // var ele = document.getElementById("btn15");
+    // var toAdd = document.getElementById("text15").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[6].event = toAdd;
+    // showGif(ele,current);
 }
 function set16(){
-    var ele = document.getElementById("btn16");
-    var toAdd = document.getElementById("text16").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[7].event = toAdd;
-    showGif(ele,current);
+    set(16);
+    // var ele = document.getElementById("btn16");
+    // var toAdd = document.getElementById("text16").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[7].event = toAdd;
+    // showGif(ele,current);
 }
 function set17(){
-    var ele = document.getElementById("btn17");
-    var toAdd = document.getElementById("text17").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[8].event = toAdd;
-    showGif(ele,current);
+    set(17);
+    // var ele = document.getElementById("btn17");
+    // var toAdd = document.getElementById("text17").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[8].event = toAdd;
+    // showGif(ele,current);
 }
 function set18(){
-    var ele = document.getElementById("btn18");
-    var toAdd = document.getElementById("text18").value;
-    var current = JSON.parse(localStorage.getItem("eventList"));
-    current[9].event = toAdd;
-    showGif(ele,current);
+    set(18);
+    // var ele = document.getElementById("btn18");
+    // var toAdd = document.getElementById("text18").value;
+    // var current = JSON.parse(localStorage.getItem("eventList"));
+    // current[9].event = toAdd;
+    // showGif(ele,current);
 }
