@@ -18,7 +18,7 @@ function elapse(){
         var saved = JSON.parse(localStorage.getItem("eventList"));
         var loop = 0;
         var loopTime = 9;
-        var nowTime = moment().format("h");
+        var nowTime = moment().format("H");
         // var nowTime = "8";
         while(loopTime < 19){
 
