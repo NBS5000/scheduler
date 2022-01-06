@@ -17,7 +17,7 @@ function elapse(){
     /* code runs every second, updates time and checks if values of events are different than what is saved
     change display of box to highlight if there is a difference, adjust colours and accessibility depending 
     on time: olive for current hour, grey and disabled for past, 'oldlace' for future*/
-    setInterval(timeInterval, 1000);
+    setInterval(timeInterval, 250);
     function timeInterval(){
         document.getElementById("currentDay").innerHTML = moment().format("dddd, Do MMMM YYYY, h:mm:ss a");
         var saved = JSON.parse(localStorage.getItem("eventList"));
