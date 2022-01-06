@@ -66,9 +66,6 @@ td{
     border-radius: 30px;
     margin-top: 6px;
 }
-.txt_event:focus{
-    box-shadow: 0px 0px 15px blue;
-}
 .txt_event:focus .time-block{
     background-color: burlywood;
 }
