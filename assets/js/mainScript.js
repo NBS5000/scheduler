@@ -135,7 +135,7 @@ function showGif(el, curr){
     /* addition of random taken from stackoverflow: 
     https://stackoverflow.com/questions/3191922/restart-an-animated-gif-from-javascript-without-reloading-the-image */ 
     // imageLoc = "url('../assets/images/upload.gif?a="+Math.random()+"?raw=true')";
-    imageLoc = "url('../assets/images/upload.gif')";
+    imageLoc = "url('../scheduler/assets/images/upload.gif')";
     el.style.backgroundImage = imageLoc;
     setTimeout(function(){
         el.style.backgroundImage = "";
