@@ -41,7 +41,7 @@ Writing of a solution to resolve the situation, including:
   * *Code added to public repository and Github Pages for public viewing*
 * Functionality
   * *Feedback to the user to show if any unsaved changes*
-  * *Past events disabled to prevent historical data being changed*
+  * *Past events disabled to prevent historical data being changed without intentionally checking a box to do so*
   * *Visual feedback to the user to show saving*
   * *The timeblocks update past/present/future without user input*
 
