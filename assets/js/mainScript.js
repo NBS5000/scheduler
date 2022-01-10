@@ -25,7 +25,7 @@ function elapse(){
         var loopTime = 9;
         var nowTime = moment().format("H");
         /* setting fixed time for testing */
-        // var nowTime = "8";
+        var nowTime = "13";
         while(loopTime < 19){
 
             var check = saved[loop].event;
@@ -41,15 +41,23 @@ function elapse(){
             }
             var row = "block"+loopTime;
             var tArea = "text"+loopTime;
+            var forceT = "force"+loopTime;
             if(nowTime > loopTime){
                 document.getElementById(row).style.backgroundColor = "lightgrey";
                 document.getElementById(row).style.color = "darkgrey";
-                document.getElementById(tArea).disabled = true;
+                if(document.getElementById(forceT).checked){
+                    document.getElementById(tArea).disabled = false;
+                }else{
+                    document.getElementById(tArea).disabled = true;
+                }
+                document.getElementById(forceT).style.visibility = "visible";
             }else if(nowTime == loopTime){
                 document.getElementById(row).style.backgroundColor = "olive";
                 document.getElementById(row).style.color = "white";
+                document.getElementById(forceT).style.visibility = "hidden";
             }else{
                 document.getElementById(row).style.backgroundColor = "oldlace";
+                document.getElementById(forceT).style.visibility = "hidden";
             }
 
             loop++;
@@ -127,6 +135,7 @@ function checkEvents(){
     }
 }
 /* below taken from wk4 class activity 20 - web apis, tuesday*/
+
 var table = document.querySelector("table");
 table.addEventListener("click",function(check){
     var element = check.target;
@@ -135,6 +144,13 @@ table.addEventListener("click",function(check){
         set(button);
     }
 });
+// table.addEventListener("click",function(event){
+//     var element = event.target;
+//     if(element.matches(".force")){
+//         var txArea = element.getAttribute("disabled");
+//         txArea = false;
+//     }
+// });
 
 var imageLoc, num;
 function showGif(el, curr){
@@ -150,6 +166,7 @@ function showGif(el, curr){
     setTimeout(function(){
         el.style.backgroundImage = "";
         el.style.visibility = "hidden";
+
     }, 3500);
 }
 
@@ -161,4 +178,8 @@ function set(num){
     var arrayPos = parseInt(num -9);
     current[arrayPos].event = toAdd;
     showGif(ele,current);
+    var forceCheck = document.getElementById("force"+num);
+    if(forceCheck.checked){
+        forceCheck.checked = false;
+    }
 }
