@@ -25,7 +25,7 @@ function elapse(){
         var loopTime = 9;
         var nowTime = moment().format("H");
         /* setting fixed time for testing */
-        var nowTime = "13";
+        // var nowTime = "13";
         while(loopTime < 19){
 
             var check = saved[loop].event;
