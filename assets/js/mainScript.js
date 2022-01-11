@@ -55,9 +55,11 @@ function elapse(){
                 document.getElementById(row).style.backgroundColor = "olive";
                 document.getElementById(row).style.color = "white";
                 document.getElementById(forceT).style.visibility = "hidden";
+                document.getElementById(tArea).disabled = false;
             }else{
                 document.getElementById(row).style.backgroundColor = "oldlace";
                 document.getElementById(forceT).style.visibility = "hidden";
+                document.getElementById(tArea).disabled = false;
             }
 
             loop++;
